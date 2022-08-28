@@ -2,11 +2,14 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./utils/generateMarkdown.js')
 
-inquirer
+
+
+function init() {
+    inquirer
     .prompt([
         {
             type: 'input',
-            message: 'What is your first and last name?',
+            message: 'What is your First and Last name?',
             name: 'author'
         },
         {
@@ -16,24 +19,24 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Please provide a link to your deployed page.',
+            message: 'Please provide a link to your Deployed Page.',
             name: 'live'
         },
         {
             type: 'input',
-            message: 'Please provide a link to your project repository.',
+            message: 'Please provide a link to your Project Repository.',
             name: 'repo'
         },
         {
             type: 'input',
-            message: 'Please provide a link to a video walkthrough of your program/application.',
+            message: 'Please provide a link to a Video Walkthrough of your program/application.',
             name: 'video'
         },
         {
         type: 'list',
-        message: 'How is your project Licenced?',
-        choices: ['Apache Licence 2.0', 'BSD 3-Clause "New" or "Revised" license', 'BSD 2-Clause "Simplified" or "FreeBSD" license', 'GNU General Public License (GPL)', 'GNU Library or "Lesser" General Public License (LGPL)', 'MIT licence', 'Mozilla Public License 2.0', 'Common Development and Distribution License', 'Eclipse Public License version 2.0', 'No Licence'],
-        name: 'licence'
+        message: 'How is your project Licensed?',
+        choices: ['Apache License 2.0', 'MIT license', 'Mozilla Public License 2.0', 'No License'],
+        name: 'license'
         },
        {
         type: 'input',
@@ -41,7 +44,7 @@ inquirer
         name: 'github'
        },
        { type: 'input',
-       message: 'What is your Project title?',
+       message: 'What is your Project Title?',
        name: 'title'
        },
        {
@@ -68,6 +71,16 @@ inquirer
         type: 'input',
         message: 'Please list any Testing required for this program/application.',
         name: 'test'
+        },
+        {
+            type: 'input',
+            message: 'Please provide a link to your personal developer website.',
+            name: 'website'
+        },
+        {
+            type: 'input',
+            message: 'please list any FAQ and answers here.',
+            name: 'questions'
         }
     ])
     .then(answers => {
@@ -78,9 +91,7 @@ inquirer
             else {console.log('Success!')};
         })
     })
-
-// TODO: Create a function to initialize app
-function init() {}
+}
 
 // Function call to initialize app
 init();
