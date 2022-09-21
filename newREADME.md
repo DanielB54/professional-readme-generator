@@ -25,7 +25,11 @@
   ## Project Description
   This project is a Command Line Application using node to execute commands to quickly generate a README.
   ## Video Walkthrough
-  [Video Walkthrough](insert video here after creation.)
+
+
+https://user-images.githubusercontent.com/102338762/191588423-21cde30e-d4ff-46c5-96e3-e6af5f066221.mp4
+
+
   ## Installation
   clone repository provided and run index.js in your terminal.
   ## Usage
